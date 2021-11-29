@@ -158,6 +158,41 @@ namespace LinkedListMSDN
             _count = 0;
             _version++;
         }
+        public _LinkedListNode<T> FindLast(T value)
+        {
+            if (_head == null) return null;
+
+            _LinkedListNode<T> last = _head._prev;
+            _LinkedListNode<T> node = last;
+            EqualityComparer<T> c = EqualityComparer<T>.Default;
+            if (node != null)
+            {
+                if (value != null)
+                {
+                    do
+                    {
+                        if (c.Equals(node._item, value))
+                        {
+                            return node;
+                        }
+
+                        node = node._prev;
+                    } while (node != last);
+                }
+                else
+                {
+                    do
+                    {
+                        if (node._item == null)
+                        {
+                            return node;
+                        }
+                        node = node._prev;
+                    } while (node != last);
+                }
+            }
+            return null;
+        }
         private void InternalInsertNodeToEmptyList(_LinkedListNode<T> newNode)
         {
             newNode._next = newNode;
@@ -226,7 +261,7 @@ namespace LinkedListMSDN
         internal _LinkedList<T> _list;
         internal _LinkedListNode<T> _next;
         internal _LinkedListNode<T> _prev;
-        T _item;
+        internal T _item;
         public _LinkedListNode(T value)
         {
             _item = value;
