@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace LinkedListMSDN
 {
@@ -11,9 +9,7 @@ namespace LinkedListMSDN
         internal _LinkedListNode<T> _head;
         internal int _count;
         internal int _version;
-        const String _VersionName = "Version";
-        const String _CountName = "Count";
-        const String _ValuesName = "Data";
+
        
 
         public void LinkedList(IEnumerable<T> collection)

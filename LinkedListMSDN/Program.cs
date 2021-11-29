@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
+
 namespace LinkedListMSDN
 {
     class Program
@@ -22,6 +21,9 @@ namespace LinkedListMSDN
             _LinkedListNode<int> addBeforeElement= list.FindLast(852);
             list.AddAfter(addAfterElement, 12345);
             list.AddBefore(addBeforeElement, 11111);
+            list.RemoveFirst();
+            list.RemoveLast();
+            
 
         }
     }
